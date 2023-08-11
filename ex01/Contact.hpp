@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 15:12:35 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/10 15:40:44 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/11 19:36:54 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 class Contact {
 
@@ -23,6 +24,8 @@ class Contact {
 		~Contact(void);
 
 		void	add_new_contact(void);
+		void	eraser_old_contact(void);
+		void	print_contact(int i);
 
 	private:
 		std::string	_first_name;
@@ -36,6 +39,10 @@ class Contact {
 		void	nickname(void);
 		void	phone_number(void);
 		void	darkest_secret(void);
+
+		std::string	return_first_name(void);
+		std::string	return_last_name(void);
+		std::string	return_nickname(void);
 };
 
 #endif
