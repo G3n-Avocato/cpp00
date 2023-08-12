@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 18:29:58 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/11 19:41:30 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:30:15 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,48 @@ void	PhoneBook::add(void) {
 	this->contacts[i].add_new_contact();
 	setnbcont();
 	std::cout << "New contact added." << std::endl;
-	std::cout << std::endl;
+}
+
+int		PhoneBook::check_input(std::string index) const {
+	size_t	i = 0;
+
+	while (i < index.length())
+	{
+		if (!std::isdigit(index[i]))
+		{
+			std::cout << "Bad input index is a digit ..." <<std::endl;
+			return (-1);
+		}
+		if (!(index[i] >= '0' && index[i] <= '7'))
+		{
+			std::cout << "Bad input only 8 contacts available ..." << std::endl;
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+
+void	PhoneBook::choose_index_contact(void) {
+	std::string	index;
+	int			i = -1;
+
+	while (index.empty())
+	{
+		std::cout << std::endl << "Select contact index : ";
+		std::cin >> index;
+		if (check_input(index) != 1)
+			index.clear();
+		else {
+			i = std::stoi(index);
+			if (i >= getnbcont())
+			{
+				std::cout << "Bad input only " << getnbcont() << " registered contacts" << std::endl;
+				index.clear();
+			}
+		}
+	}
+	this->contacts[i].print_data_contact();
 }
 
 void	PhoneBook::search(void) {
@@ -85,22 +126,22 @@ void	PhoneBook::search(void) {
 		return ;
 	}
 	else {
-		//ajouter contact : avant affcihage du repertoire
+		std::cout << std::setw(32) << "... Contact list ..." << std::endl;
 		std::cout << std::setw(10) << "index" << "|" << "first name" << "|" << std::setw(10);
 		std::cout << "last name" << "|" << std::setw(10) << "nickname" << std::endl;
-		while (i <= getnbcont())
+		while (i < getnbcont())
 		{
 			this->contacts[i].print_contact(i);
 			i++;
 		}
 	}
+	choose_index_contact();
 }
 
 void	PhoneBook::error_setting(void) const {
 
 	std::cout << "Wrong order ..." << std::endl;
 	std::cout << std::endl;
-	std::cout << "The orders available are :" << std::endl;
 	std::cout << "ADD : to save a new contact" << std::endl;
 	std::cout << "SEARCH : search contact in the phone book" << std::endl;
 	std::cout << "EXIT : leave the phone book" << std::endl;
@@ -111,7 +152,7 @@ void	PhoneBook::setting_orders(void) {
 
 	while (1)
 	{
-		std::cout << "... Setting ..." << std::endl;
+		std::cout << std::endl << "... Setting ..." << std::endl;
 		std::cout << "Enter an order : ";
 		std::cin >> user_in;
 		std::cout << std::endl;

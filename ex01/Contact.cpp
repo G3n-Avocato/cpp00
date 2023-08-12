@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 15:11:58 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/11 19:38:15 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:16:50 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,12 @@ void	Contact::print_contact(int i) {
 	std::cout << std::setw(10) << return_first_name() << "|";
 	std::cout << std::setw(10) << return_last_name() << "|";
 	std::cout << std::setw(10) << return_nickname() << std::endl;
+}
+
+void	Contact::print_data_contact(void) const {
+	std::cout << "first name : " << this->_first_name << std::endl;
+	std::cout << "last name : " << this->_last_name << std::endl;
+	std::cout << "nickname : " << this->_nickname << std::endl;
+	std::cout << "phone number : " << this->_phone_number << std::endl;
+	std::cout << "darkest secret : " << this->_darkest_secret <<std::endl;
 }

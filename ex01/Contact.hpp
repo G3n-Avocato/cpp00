@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 15:12:35 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/11 19:36:54 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:16:58 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Contact {
 		void	add_new_contact(void);
 		void	eraser_old_contact(void);
 		void	print_contact(int i);
+		void	print_data_contact(void) const;
 
 	private:
 		std::string	_first_name;
