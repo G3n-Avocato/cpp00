@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:34:18 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/17 19:37:54 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/18 00:09:56 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,31 @@ class	Fixed {
 		~Fixed(void);
 
 		Fixed	&operator=(Fixed const &rhs);
-	
+		Fixed	&operator++(void);
+		Fixed	operator++(int);
+		Fixed	&operator--(void);
+		Fixed	operator--(int);;
+
+		bool	operator>(Fixed const &rhs) const;
+		bool	operator<(Fixed const &rhs) const;
+		bool	operator>=(Fixed const &rhs) const;
+		bool	operator<=(Fixed const &rhs) const;
+		bool	operator==(Fixed const &rhs) const;
+		bool	operator!=(Fixed const &rhs) const;
+		Fixed	operator+(Fixed const &rhs) const;
+		Fixed	operator-(Fixed const &rhs) const;
+		Fixed	operator*(Fixed const &rhs) const;
+		Fixed	operator/(Fixed const &rhs) const;
+
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
 		int		toInt(void) const;
+		
+		static int	min(Fixed const &rhs, Fixed const &other);
+		static int	min(Fixed &rhs, Fixed &other);
+		static int	max(Fixed const &rhs, Fixed const &other);
+		static int	max(Fixed &rhs, Fixed &other);
 
 	private:
 		int					_val;

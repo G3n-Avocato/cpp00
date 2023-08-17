@@ -6,19 +6,28 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:43:10 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/16 23:58:11 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/17 19:36:32 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
+#include <cmath>
 
 const int		Fixed::_bits = 8;
 
 Fixed::Fixed(void) {
 	std::cout << "Default constructor called" << std::endl;
-	this->_val = 0;
 }
+
+Fixed::Fixed(int const cst) {
+	std::cout << "Int constructor called" << std::endl;
+	this->_val = cst << _bits;
+}
+
+Fixed::Fixed(float const cst) {
+	std::cout << "Float constructor called" << std::endl;
+	this->_val = roundf(cst * (1 << _bits));
+}	
 
 Fixed::Fixed(Fixed const &src) {
 	std::cout << "Copy construtor called" << std::endl;
@@ -37,10 +46,24 @@ Fixed	&Fixed::operator=(const Fixed &rhs) {
 }
 
 int	 Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_val);
 }
 
 void	Fixed::setRawBits(int const raw) {
 	this->_val = raw;
+}
+
+float	Fixed::toFloat(void) const {
+	float	Nval = static_cast<float>(this->_val) / (1 << _bits);
+	return (Nval);
+}
+
+int		Fixed::toInt(void) const {
+	int		Nval = this->_val >> _bits;
+	return (Nval);
+}
+
+std::ostream &operator<<(std::ostream &o, Fixed const &rhs) {
+	o << rhs.toFloat();
+	return (o);
 }
