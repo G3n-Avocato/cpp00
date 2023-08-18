@@ -48,10 +48,10 @@ class	Fixed {
 		float	toFloat(void) const;
 		int		toInt(void) const;
 		
-		static int	min(Fixed const &rhs, Fixed const &other);
-		static int	min(Fixed &rhs, Fixed &other);
-		static int	max(Fixed const &rhs, Fixed const &other);
-		static int	max(Fixed &rhs, Fixed &other);
+		static const Fixed	&min(const Fixed &rhs, const Fixed &other);
+		static Fixed	&min(Fixed &rhs, Fixed &other);
+		static const Fixed	&max(const Fixed &rhs, const Fixed &other);
+		static Fixed	&max(Fixed &rhs, Fixed &other);
 
 	private:
 		int					_val;

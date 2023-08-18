@@ -64,43 +64,43 @@ std::ostream &operator<<(std::ostream &o, Fixed const &rhs) {
 }
 
 bool	Fixed::operator>(Fixed const &rhs) const {
-	return (_val > rhs._val);
+	return (this->_val > rhs._val);
 }
 
 bool	Fixed::operator<(Fixed const &rhs) const {
-	return (_val < rhs._val);
+	return (this->_val < rhs._val);
 }
 
 bool	Fixed::operator>=(Fixed const &rhs) const {
-	return (_val >= rhs._val);
+	return (this->_val >= rhs._val);
 }
 
 bool	Fixed::operator<=(Fixed const &rhs) const {
-	return (_val <= rhs._val);
+	return (this->_val <= rhs._val);
 }
 
 bool	Fixed::operator==(Fixed const &rhs) const {
-	return (_val == rhs._val);
+	return (this->_val == rhs._val);
 }
 
 bool	Fixed::operator!=(Fixed const &rhs) const {
-	return (_val != rhs._val);
+	return (this->_val != rhs._val);
 }
 
 Fixed	Fixed::operator+(Fixed const &rhs) const {
-	return Fixed(_val + rhs._val);
+	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
 Fixed	Fixed::operator-(Fixed const &rhs) const {
-	return Fixed(_val - rhs._val);
+	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
 Fixed	Fixed::operator*(Fixed const &rhs) const {
-	return Fixed(_val * rhs._val);
+	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
 Fixed	Fixed::operator/(Fixed const &rhs) const {
-	return Fixed(_val / rhs._val);
+	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
 Fixed&	Fixed::operator++(void) {
@@ -125,30 +125,26 @@ Fixed	Fixed::operator--(int) {
 	return (tmp);
 }
 
-int	Fixed::min(Fixed const &rhs, Fixed const &other) {
-	if (rhs._val >= other._val)
-		return (other.toFloat());
-	else
-		return (rhs.toFloat());
+const Fixed&	Fixed::min(const Fixed &rhs, const Fixed &other) {
+	if (rhs >= other)
+		return (other);
+	return (rhs);
 }
 
-int	Fixed::min(Fixed &rhs, Fixed &other) {
-	if (rhs._val >= other._val)
-		return (other.toFloat());
-	else
-		return (rhs.toFloat());
+Fixed&	Fixed::min(Fixed &rhs, Fixed &other) {
+	if (rhs >= other)
+		return (other);
+	return (rhs);
 }
 
-int	Fixed::max(Fixed const &rhs, Fixed const &other) {
-	if (rhs._val <= other._val)
-		return (other._val);
-	else
-		return (rhs._val);
+const Fixed&	Fixed::max(const Fixed &rhs, const Fixed &other) {
+	if (rhs <= other)
+		return (other);
+	return (rhs);
 }
 
-int	Fixed::max(Fixed &rhs, Fixed &other) {
-	if (rhs._val <= other._val)
-		return (other.toInt());
-	else
-		return (rhs.toInt());
+Fixed& Fixed::max(Fixed &rhs, Fixed &other) { //pA besoin & normalement //tester
+	if (rhs <= other)
+		return (other);
+	return (rhs);
 }
