@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 17:04:49 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/20 18:31:56 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/20 20:15:25 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	ClapTrap::attack(const std::string &target) {
 	else {
 		std::cout << "ClapTrap " << this->_name;
 		if (this->_EnergyPoints == 0)
-			std::cout << " has no more energy points ! ";
+			std::cout << " has no more energy points !";
 		else
-			std::cout << " has no more life points ! ";
+			std::cout << " has no more life points !";
 		std::cout << " can't attacks" << target << std::endl;
 	}
 }
