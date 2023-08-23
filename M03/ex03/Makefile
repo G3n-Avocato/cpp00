@@ -6,11 +6,11 @@
 #    By: lamasson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/19 16:50:40 by lamasson          #+#    #+#              #
-#    Updated: 2023/08/20 21:55:33 by lamasson         ###   ########.fr        #
+#    Updated: 2023/08/23 17:09:24 by lamasson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= FragTrap
+NAME			= DiamondTrap
 CXX				= clang++
 CXXFLAGS		= -Wall -Wextra -Werror -g3
 RM				= rm -rf
@@ -18,7 +18,8 @@ RM				= rm -rf
 SRC				= main.cpp \
 				  ClapTrap.cpp \
 				  ScavTrap.cpp \
-				  FragTrap.cpp
+				  FragTrap.cpp	\
+				  DiamondTrap.cpp
 
 OBJ				= ${SRC:%.cpp=%.o}
 

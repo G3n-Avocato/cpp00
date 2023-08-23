@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 22:08:42 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/20 22:54:05 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/23 16:53:51 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class	DiamondTrap : public ScavTrap, public FragTrap {
 		DiamondTrap(DiamondTrap const &src);
 		DiamondTrap &operator=(DiamondTrap const &rhs);
 		~DiamondTrap(void);
-
+		
 		void	whoAmI(void);
+		void	attack(const std::string &target) override;
 
 	private:
 		std::string	_name;
