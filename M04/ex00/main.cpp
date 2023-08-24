@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:57:54 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/23 20:57:05 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/24 12:45:43 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,24 @@
 int main(void)
 {
 	const Animal*	meta = new Animal();
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
+	const Animal*	dog = new Dog();
+	const Animal*	cat = new Cat();
+	
 	Dog				doggy;
 	Dog				another_doggy(doggy);
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	const WrongAnimal*	W_meta = new WrongAnimal();
+	const WrongAnimal*	W_cat = new WrongCat();
+
+	std::cout << std::endl;
+	std::cout << dog->getType() << " " << std::endl;
+	dog->makeSound();
+	std::cout << std::endl;
+	std::cout << cat->getType() << " " << std::endl;
+	cat->makeSound();
+	std::cout << std::endl;
 	std::cout << meta->getType() << " " << std::endl;
+	meta->makeSound();
 	std::cout << std::endl;
 	
 	std::cout << "C'est qui mon doggy ?! " << std::endl;
@@ -32,13 +42,17 @@ int main(void)
 	another_doggy.makeSound();
 	std::cout << std::endl;
 
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	std::cout << W_meta->getType() << std::endl;
+	W_meta->makeSound();
+	std::cout << std::endl;
+	std::cout << W_cat->getType() << std::endl;
+	W_cat->makeSound();
 	std::cout << std::endl;
 
-	delete i;
-	delete j;
+	delete W_cat;
+	delete W_meta;
+	delete cat;
+	delete dog;
 	delete meta;
-	return 0;
+	return (0);
 }

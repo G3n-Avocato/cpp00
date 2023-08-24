@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 19:37:32 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/23 20:48:49 by lamasson         ###   ########.fr       */
+/*   Created: 2023/08/23 19:05:24 by lamasson          #+#    #+#             */
+/*   Updated: 2023/08/24 14:02:41 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class	Cat : public Animal {
+class	Dog : public Animal {
 
 	public:
-		Cat(void);
-		Cat(Cat const &src);
-		Cat&	operator=(Cat const &rhs);
-		~Cat(void) override;
+		Dog(void);
+		Dog(Dog const &src);
+		Dog&	operator=(Dog const &rhs);
+		~Dog(void) override;
 
 		void		makeSound(void) const override;
 		std::string	getType(void) const;
-		
+
+	private:
+		Brain*	_brain;
 };
 
 #endif
