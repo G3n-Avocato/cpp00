@@ -14,12 +14,15 @@
 #include <string.h>
 #include <stdlib.h>
 
+int ft_no_pipe(char**tab, int fd_in, char **env);
+int ft_pipe(char**tab, int fd_in, char **env);
+
 typedef struct s_micro {
 	char	**tab;
 	int		s;
 }t_micro;
 
-int	ft_putstr_fd(char *str, int fd)
+int	ft_putstr_fd(char *str, char *str2, int fd)
 {
 	int	i;
 
@@ -29,6 +32,12 @@ int	ft_putstr_fd(char *str, int fd)
 		write(fd, &str[i], 1);
 		i++;
 	}
+    while (str2 && str2[i])
+    {
+        write(fd, &str2[i], 1);
+        i++;
+    }
+    write(fd, "\n", 1);
 	return (0);
 }
 
@@ -60,15 +69,13 @@ int	ft_cd(char **c, int nb_cmd)
 
 	if (nb_cmd != 1 || !c[1])
 	{
-		ft_putstr_fd("error: cd: bad arguments\n", 2);
+		ft_putstr_fd("error: cd: bad arguments", NULL, 2);
 		return (1);
 	}
 	path = c[1];
 	if (chdir(path) != 0)
 	{
-		ft_putstr_fd("error: cd: cannot change directory to ", 2);
-		ft_putstr_fd(c[1], 2);
-		ft_putstr_fd("\n", 2);
+		ft_putstr_fd("error: cd: cannot change directory to ", c[1], 2);
 		return (1);
 	}
 	return (0);	
@@ -129,26 +136,29 @@ int	main(int argc, char **argv, char **env)
 		}
 		i++;
 	}
-	
-	int	fd[2];
+
+    int fd_in = 0;
 	y = 0;
 	z = 0;
 	while (y < nb_cmd)
 	{
 		if (strncmp(shell[y].tab[z], "cd", 3) == 0)
 			ft_cd(shell[y].tab, nb_cmd);
-		else if (shell[y].s == 0)
-
+		else if (shell[y].s == 0 || y + 1 == nb_cmd)
+        {
+            fd_in = ft_no_pipe(shell[y].tab, fd_in, env);
+            if (fd_in == -1)
+                return (1);
+        }
 		else if (shell[y].s == 1)
 		{
-			
-
+		        fd_in = ft_pipe(shell[y].tab, fd_in, env);
+                if (fd_in == -1)
+                    return (1);
 		}
-
 	}
-
-
-
+    close(fd_in);
+/*
 	int l = 0;
 	int f = 0;
 	while (l < nb_cmd)
@@ -160,6 +170,6 @@ int	main(int argc, char **argv, char **env)
 		}
 		f = 0;
 		l++;
-	}
+	}*/
 	return (0);
 }
