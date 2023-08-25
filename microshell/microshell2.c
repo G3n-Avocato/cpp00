@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 18:18:23 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/24 21:24:31 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/25 12:02:33 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	ft_putstr_fd(char *str, char *str2, int fd)
 		write(fd, &str[i], 1);
 		i++;
 	}
+	i = 0;
     while (str2 && str2[i])
     {
         write(fd, &str2[i], 1);
@@ -95,7 +96,16 @@ int	ft_nb_cmds(char **argv)
 	return (nb_cmd);
 }
 
-#include <stdio.h>
+void	ft_error(void) {
+	char *str = "error: fatal\n";
+	int	i = 0;
+
+	while (str[i])
+	{
+		write(2, &str[i], 1);
+		i++;
+	}
+}
 
 int	main(int argc, char **argv, char **env)
 {
@@ -110,11 +120,16 @@ int	main(int argc, char **argv, char **env)
 		return (1);
 	nb_cmd = ft_nb_cmds(argv);
 	shell = malloc(sizeof(t_micro) * nb_cmd);
+	if (!shell)
+	{
+		ft_error();
+		return(1);
+	}
 	while (i <= argc)
 	{
-		if (strncmp(argv[i], ";", 2) == 0 || strncmp(argv[i], "|", 2) == 0 || nb_cmd == 1)
+		if ((y + 1 == nb_cmd && i == argc) || strncmp(argv[i], ";", 2) == 0 || strncmp(argv[i], "|", 2) == 0)
 		{	
-			if (nb_cmd == 1)
+			if (y + 1 == nb_cmd && i == argc)
 			{
 				i = argc;
 				shell[y].s = -1;
@@ -124,14 +139,25 @@ int	main(int argc, char **argv, char **env)
 			else if  (strncmp(argv[i], "|", 2) == 0)
 				shell[y].s = 1;
 			shell[y].tab = malloc(sizeof(char *) * (i - u + 1));
+			if (!shell[y].tab)
+			{
+				ft_error();
+				return (1);
+			}
 			while (u < i)
 			{
 				shell[y].tab[z] = ft_strdup(argv[u]);
+				if (!shell[y].tab[z])
+				{
+					ft_error();
+					return (1);
+				}
 				u++;
 				z++;
 			}
 			shell[y].tab[z] = NULL;
 			z = 0;
+			u++;
 			y++;
 		}
 		i++;
@@ -156,20 +182,23 @@ int	main(int argc, char **argv, char **env)
                 if (fd_in == -1)
                     return (1);
 		}
+		y++;
 	}
     close(fd_in);
-/*
-	int l = 0;
-	int f = 0;
-	while (l < nb_cmd)
+
+	y = 0;
+	z = 0;
+	while (y < nb_cmd)
 	{
-		while(shell[l].tab[f])
+		while (shell[y].tab[z])
 		{
-			printf("tab %d = %s\n", f, shell[l].tab[f]);
-			f++;
+			free(shell[y].tab[z]);
+			z++;
 		}
-		f = 0;
-		l++;
-	}*/
+		z = 0;
+		free(shell[y].tab);
+		y++;
+	}
+	free(shell);
 	return (0);
 }

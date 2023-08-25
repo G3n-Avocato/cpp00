@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:46:52 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/24 21:23:52 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/25 11:33:25 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -32,7 +32,7 @@ int	ft_no_pipe(char **tab, int fd_in, char **env)
 		close(fd_in);
 		while (waitpid(-1, NULL, 0) != -1)
 			;
-		fd_in = dup(0);
+		fd_in = 0;
 	}
 	return (fd_in);
 }
