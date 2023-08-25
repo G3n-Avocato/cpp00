@@ -144,8 +144,16 @@ int	ft_nb_cmds(char **argv)
 
 	while (argv[i])
 	{
-		if (strncmp(argv[i], ";", 2) == 0 || strncmp(argv[i], "|", 2) == 0)
-			nb_cmd++;
+		if (!strncmp(argv[i], ";", 2) || !strncmp(argv[i], "|", 2))
+		{
+			if (i == 1 || !strncmp(argv[i - 1], "|", 2) || !strncmp(argv[i - 1], ";", 2))
+			{
+				i++;
+				continue ;
+			}
+			else
+				nb_cmd++;
+		}
 		i++;
 	}
 	return (nb_cmd);
@@ -193,6 +201,12 @@ int	main(int argc, char **argv, char **env)
 				shell[y].s = 0;
 			else if  (strncmp(argv[i], "|", 2) == 0)
 				shell[y].s = 1;
+			if (strncmp(argv[u], ";", 2) == 0 || strncmp(argv[u], "|", 2) == 0)
+			{
+				i++;
+				u = i;
+				continue ;
+			}
 			shell[y].tab = malloc(sizeof(char *) * (i - u + 1));
 			if (!shell[y].tab)
 			{
