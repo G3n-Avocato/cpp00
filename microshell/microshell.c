@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 11:39:08 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/25 12:05:22 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/25 13:53:16 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,11 +146,13 @@ int	ft_nb_cmds(char **argv)
 	{
 		if (!strncmp(argv[i], ";", 2) || !strncmp(argv[i], "|", 2))
 		{
-			if (i == 1 || !strncmp(argv[i - 1], "|", 2) || !strncmp(argv[i - 1], ";", 2))
+			if (!strncmp(argv[i - 1], "|", 2) || !strncmp(argv[i - 1], ";", 2))
 			{
 				i++;
 				continue ;
 			}
+			else if (i == 1 && !argv[i + 1])
+				nb_cmd = 0;
 			else
 				nb_cmd++;
 		}
@@ -182,6 +184,8 @@ int	main(int argc, char **argv, char **env)
 	if (argc == 1)
 		return (1);
 	nb_cmd = ft_nb_cmds(argv);
+	if (nb_cmd== 0)
+		return (1);
 	shell = malloc(sizeof(t_micro) * nb_cmd);
 	if (!shell)
 	{
@@ -190,18 +194,18 @@ int	main(int argc, char **argv, char **env)
 	}
 	while (i <= argc)
 	{
-		if ((y + 1 == nb_cmd && i == argc) || strncmp(argv[i], ";", 2) == 0 || strncmp(argv[i], "|", 2) == 0)
+		if ((y + 1 == nb_cmd && i == argc) || !strncmp(argv[i], ";", 2) || !strncmp(argv[i], "|", 2))
 		{	
 			if (y + 1 == nb_cmd && i == argc)
 			{
 				i = argc;
 				shell[y].s = -1;
 			}
-			else if (strncmp(argv[i], ";", 2) == 0)
+			else if (!strncmp(argv[i], ";", 2))
 				shell[y].s = 0;
-			else if  (strncmp(argv[i], "|", 2) == 0)
+			else if  (!strncmp(argv[i], "|", 2))
 				shell[y].s = 1;
-			if (strncmp(argv[u], ";", 2) == 0 || strncmp(argv[u], "|", 2) == 0)
+			if (!strncmp(argv[u], ";", 2)|| !strncmp(argv[u], "|", 2))
 			{
 				i++;
 				u = i;
