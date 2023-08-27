@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 13:56:15 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/25 16:21:07 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/27 14:53:45 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	parsing_nb_cmd(char **argv, int argc)
 	if (argc == 1)
 		return (0);
 	else if (argc == 2 && (strncmp(argv[i], ";", 2) || strncmp(argv[i], "|", 2)))
-			return (nb_cmd);
+			return (nb_cmd); //1
 	while (argv[i])
 	{
 		if (!strncmp(argv[i], ";", 2) || !strncmp(argv[i], "|", 2))
@@ -91,7 +91,7 @@ char *ft_strdup(char *str)
 	new[i] = '\0';
 	return (new);
 }
-
+/*
 void	*ft_init_struct_cmd(t_micro *shell, char **argv, int argc, int nb_cmd)
 {
 	int	i = 1; 
@@ -111,17 +111,20 @@ void	*ft_init_struct_cmd(t_micro *shell, char **argv, int argc, int nb_cmd)
 				j = i;
 				continue ;
 			}
+			
 			if (y + 1 == nb_cmd && i == argc)
 				shell[y].s = -1;
 			else if (!strncmp(argv[i], ";", 2))
 				shell[y].s = 0;
 			else if  (!strncmp(argv[i], "|", 2))
 				shell[y].s = 1;
-			if (i + 1 == argc)
+			
+			if (i + 1 == argc && shell[y].s == -1)
 				i++;
 			shell[y].tab = malloc(sizeof(char *) * (i - j + 1));
 			if (!shell[y].tab)
 				return (NULL);
+			
 			while (j < i)
 			{
 				shell[y].tab[z] = ft_strdup(argv[j]);
@@ -130,7 +133,7 @@ void	*ft_init_struct_cmd(t_micro *shell, char **argv, int argc, int nb_cmd)
 				j++;
 				z++;
 			}
-			shell[y].tab[z] = NULL;
+			shell[y].tab[z] = NULL;	
 			z = 0;
 			j++;
 			y++;
@@ -163,6 +166,7 @@ int	main(int argc, char **argv, char **env)
 
 	int	i = 0;
 	int	j = 0;
+	printf("nb _cmd = %d\n", nb_cmd);
 	while (i < nb_cmd)
 	{
 		while (shell[i].tab[j])
