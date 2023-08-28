@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 13:23:30 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/27 18:25:13 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/28 20:11:47 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,6 +213,17 @@ int	ft_cd(char **c, int nb_cmd)
 	return (0);	
 }
 
+int	ft_wait(pid_t pid)
+{
+	int status = 0;
+
+	if (pid > 0)
+		waitpid(pid, &status, 0);
+	if (pid > -1 && WIFEXITED(status))
+		return (-1);
+	return (0);
+}
+
 int	ft_no_pipe(char **tab, int fd_in, char **env)
 {
 	if (fork() == 0)
@@ -235,32 +246,42 @@ int	ft_no_pipe(char **tab, int fd_in, char **env)
 	return (fd_in);
 }
 
-int	ft_pipe(char **tab, int fd_in, char **env)
+void ft_free(t_micro *shell, int nb_cmd);
+
+int	ft_pipe(t_micro *shell, int y, int fd_in, char **env, int nb_cmd)
 {
 	int	fd[2];
+	pid_t	pid;
 
 	if (pipe(fd) == -1)
 	{
 		ft_putstr_error("error: fatal", NULL);
 		return (-1);
 	}
-	if (fork() == 0)
+	pid = fork();
+	if (pid == 0)
 	{
 		dup2(fd[1], 1);
 		close(fd[0]);
 		close(fd[1]);
 		dup2(fd_in, 0);
 		close(fd_in);
-		if (execve(tab[0], tab, env) == -1)
+		if (execve(shell[y].tab[0], shell[y].tab, env) == -1)
 		{
-			ft_putstr_error("error: cannot execute ", tab[0]);
-			return (-1);
+			ft_putstr_error("error: cannot execute ", shell[y].tab[0]);
+			ft_free(shell, nb_cmd);
+			exit (-1);
 		}
 	}
 	else
 	{
 		close(fd[1]);
 		close(fd_in);
+		if (ft_wait(pid) == -1)
+		{
+			close(fd[0]);
+			return (-1);
+		}
 		fd_in = fd[0];
 	}
 	return (fd_in);
@@ -279,10 +300,26 @@ void	ft_start_exec(t_micro *shell, int nb_cmd, char **env)
 		else if (shell[y].out != 1 || y + 1 == nb_cmd)
 			fd_in = ft_no_pipe(shell[y].tab, fd_in, env);
 		else if (shell[y].out == 1)
-			fd_in = ft_pipe(shell[y].tab, fd_in, env);
+			fd_in = ft_pipe(shell, y, fd_in, env, nb_cmd);
+		if (fd_in == -1)
+			break ;
 		y++;
 	}
-	close(fd_in);
+	if (fd_in > 0)
+		close(fd_in);
+}
+//END EXEC//
+
+void	ft_free(t_micro *shell, int nb_cmd)
+{
+	int	i = 0;
+
+	while (i < nb_cmd)
+	{
+		free(shell[i].tab);
+		i++;
+	}
+	free(shell);
 }
 
 int	main(int argc, char **argv, char **env)
@@ -292,6 +329,6 @@ int	main(int argc, char **argv, char **env)
 		return (1);
 	int		nb_cmd = parsing_nb_cmd(argv, argc);
 	ft_start_exec(shell, nb_cmd, env);
-
+	ft_free(shell, nb_cmd);
 	return (0);
 }
