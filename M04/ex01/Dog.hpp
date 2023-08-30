@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 19:05:24 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/24 14:02:41 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/31 00:28:55 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ class	Dog : public Animal {
 		~Dog(void) override;
 
 		void		makeSound(void) const override;
-		std::string	getType(void) const;
+		std::string	getType(void) const;	
+		void	setIdeas(std::string id);
+		std::string *getIdeas(void) const ;
 
 	private:
 		Brain*	_brain;

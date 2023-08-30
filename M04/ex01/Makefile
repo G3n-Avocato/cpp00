@@ -6,7 +6,7 @@
 #    By: lamasson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:55:01 by lamasson          #+#    #+#              #
-#    Updated: 2023/08/23 19:41:27 by lamasson         ###   ########.fr        #
+#    Updated: 2023/08/31 00:05:29 by lamasson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ RM				= rm -rf
 SRC				= main.cpp \
 				  Animal.cpp \
 				  Dog.cpp \
-				  Cat.cpp
+				  Cat.cpp \
+				  Brain.cpp
 
 OBJ				= ${SRC:%.cpp=%.o}
 

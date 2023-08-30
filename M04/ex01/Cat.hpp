@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 19:37:32 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/24 14:02:45 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/30 23:52:37 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ class	Cat : public Animal {
 
 		void		makeSound(void) const override;
 		std::string	getType(void) const;
-	
+		Brain	*getBrain(void) const;
+
+		
+		void	setIdeas(std::string id);
+		std::string *getIdeas(void) const ;
+
 	private:
 		Brain*	_brain;
 		

@@ -5,25 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 13:04:25 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/24 13:58:49 by lamasson         ###   ########.fr       */
+/*   Created: 2023/08/31 00:32:35 by lamasson          #+#    #+#             */
+/*   Updated: 2023/08/31 00:36:18 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
-class	Brain {
-	public:
+class Brain {
+	public :
 		Brain(void);
-		Brain(Brain const &src);
-		Brain& operator=(Brain const &rhs);
+		Brain(const Brain &src) ;
+		Brain &operator=(const Brain &rhs) ;
 		~Brain(void);
 
-	protected:
-		std::string	ideas[100];
+		void	setIdeas(std::string id) ;
+		std::string *getIdeas(void) const ;
+
+	private:
+		std::string	_ideas[100];
 };
 
 #endif
