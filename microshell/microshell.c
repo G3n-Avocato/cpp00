@@ -43,6 +43,7 @@ int	ft_putstr_error(char *str, char *str2)
 	return (0);
 }
 //PARSING//
+
 int	parsing_nb_cmd(char **argv, int argc)
 {
 	int	nb_cmd = 0;
