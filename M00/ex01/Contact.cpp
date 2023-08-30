@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 15:11:58 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/12 18:16:50 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/30 21:12:55 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ void	Contact::first_name(void) {
 	while (this->_first_name.empty())
 	{
 		std::cout << "first_name : ";
-		std::cin >> this->_first_name;
+		getline(std::cin, this->_first_name);
+		if (std::cin.eof())
+			return ;
 	}
 }
 
@@ -46,7 +48,9 @@ void	Contact::last_name(void) {
 	while (this->_last_name.empty())
 	{
 		std::cout << "last name : ";
-		std::cin >> this->_last_name;
+		getline(std::cin, this->_last_name);
+		if (std::cin.eof())
+			return ;
 	}
 }
 
@@ -54,7 +58,9 @@ void	Contact::nickname(void) {
 	while (this->_nickname.empty())
 	{
 		std::cout << "nickname : ";
-		std::cin >> this->_nickname;
+		getline(std::cin, this->_nickname);
+		if (std::cin.eof())
+			return ;
 	}
 }
 
@@ -62,7 +68,9 @@ void	Contact::phone_number(void) {
 	while (this->_phone_number.empty())
 	{
 		std::cout << "phone number : ";
-		std::cin >> this->_phone_number;
+		getline(std::cin, this->_phone_number);
+		if (std::cin.eof())
+			return ;
 	} 
 }
 
@@ -71,6 +79,8 @@ void	Contact::darkest_secret(void) {
 	{
 		std::cout << "darkest secret : ";
 		std::cin >> this->_darkest_secret;
+		if (std::cin.eof())
+			return ;
 	}
 }
 

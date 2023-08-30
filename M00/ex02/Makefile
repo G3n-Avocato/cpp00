@@ -6,14 +6,14 @@
 #    By: lamasson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/13 14:06:42 by lamasson          #+#    #+#              #
-#    Updated: 2023/08/13 22:49:06 by lamasson         ###   ########.fr        #
+#    Updated: 2023/08/30 21:17:56 by lamasson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME			= Account
 CXX				= clang++
-CXXFLAGS		= -Wall -Wextra -Werror -g3
+CXXFLAGS		= -g3
 RM				= rm -rf
 
 SRC				= Account.cpp \

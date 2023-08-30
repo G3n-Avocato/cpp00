@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 14:10:26 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/13 23:08:09 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/30 21:31:13 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	Account::displayAccountsInfos(void) {
 	std::cout << ";deposits:" << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
-
 void	Account::makeDeposit(int deposit) {
 	this->_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount;
@@ -69,6 +68,7 @@ void	Account::makeDeposit(int deposit) {
 	this->_nbDeposits++;
 	std::cout << ";nb_deposits:"<< this->_nbDeposits << std::endl;
 	this->_totalAmount = this->_totalAmount + deposit;
+	this->_totalNbDeposits += this->_nbDeposits;
 }
 
 bool	Account::makeWithdrawal(int withdrawal) {

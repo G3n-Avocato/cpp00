@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 18:29:58 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/12 18:30:15 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/30 20:59:06 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,21 @@ void	PhoneBook::add(void) {
 		std::cout << "press [D] to delete an old contact ..." << std::endl;
 		std::cout << ": ";
 		std::cin >> space;
-		this->contacts[i].eraser_old_contact();
+		if (std::cin.eof())
+			return ;
+		this->_contacts[i].eraser_old_contact();
 		std::cout << "contact deleted ..." << std::endl;
 		std::cout << std::endl;
 		setoldcont();
 		std::cout << "press [Y] to continue adding ..." <<std::endl;
 		std::cout << ": ";
 		std::cin >> space;
+		if (std::cin.eof())
+			return ;
 		std::cout << std::endl;
 	}
 	std::cout << "Complete to save new contact :" << std::endl;
-	this->contacts[i].add_new_contact();
+	this->_contacts[i].add_new_contact();
 	setnbcont();
 	std::cout << "New contact added." << std::endl;
 }
@@ -102,7 +106,9 @@ void	PhoneBook::choose_index_contact(void) {
 	while (index.empty())
 	{
 		std::cout << std::endl << "Select contact index : ";
-		std::cin >> index;
+		std::getline(std::cin, index);
+		if (std::cin.eof())
+			return ;
 		if (check_input(index) != 1)
 			index.clear();
 		else {
@@ -114,7 +120,7 @@ void	PhoneBook::choose_index_contact(void) {
 			}
 		}
 	}
-	this->contacts[i].print_data_contact();
+	this->_contacts[i].print_data_contact();
 }
 
 void	PhoneBook::search(void) {
@@ -131,7 +137,7 @@ void	PhoneBook::search(void) {
 		std::cout << "last name" << "|" << std::setw(10) << "nickname" << std::endl;
 		while (i < getnbcont())
 		{
-			this->contacts[i].print_contact(i);
+			this->_contacts[i].print_contact(i);
 			i++;
 		}
 	}
@@ -154,8 +160,10 @@ void	PhoneBook::setting_orders(void) {
 	{
 		std::cout << std::endl << "... Setting ..." << std::endl;
 		std::cout << "Enter an order : ";
-		std::cin >> user_in;
+		std::getline(std::cin, user_in);
 		std::cout << std::endl;
+		if (std::cin.eof())
+			break ;
 		if (user_in == "ADD")
 			add();
 		else if (user_in == "SEARCH")

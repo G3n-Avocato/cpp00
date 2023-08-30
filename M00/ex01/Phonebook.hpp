@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 15:24:54 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/12 18:31:03 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/30 20:47:30 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 class PhoneBook {
 
 public:
-	Contact	contacts[8];
-
 	PhoneBook(void);
 	~PhoneBook(void);
 
@@ -35,6 +33,7 @@ public:
 private:
 	int		_nbcont;
 	int		_oldcont;
+	Contact	_contacts[8];
 
 	void	add(void);
 	void	search(void);
