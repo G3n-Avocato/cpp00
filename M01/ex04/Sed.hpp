@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 23:32:16 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/14 01:32:27 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:18:57 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 class	Sed {
 

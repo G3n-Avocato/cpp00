@@ -6,12 +6,11 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 23:26:31 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/14 01:38:00 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:19:01 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
-#include <iostream>
 
 int main(int argc, char **argv) {
 

@@ -6,12 +6,11 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 23:41:48 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/14 01:40:47 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:19:06 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
-#include <iostream>
 
 Sed::Sed(char *file, char *s1, char *s2) : _s1(s1), _s2(s2){
 	this->_file.open(file);
