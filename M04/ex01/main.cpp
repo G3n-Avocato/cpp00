@@ -6,13 +6,13 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:57:54 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/31 00:22:10 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/01 19:36:06 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+
 /*
 int main(void)
 {
@@ -54,7 +54,15 @@ int	main()
 	Dog*	doggy = new Dog();
 	Dog*	doggy_dog;
 	
-	doggy->setIdeas("saucisse");
+	std::string		sau[100];
+	for (int i = 0; i < 100; i++) {
+		if (i < 10)
+			sau[i] = "saucisse";
+		else
+			sau[i] = "thon";
+	}
+
+	doggy->setIdeas(sau);
 	doggy_dog = new Dog(*doggy);
 
 	std::string	*id = doggy_dog->getIdeas();	
@@ -73,6 +81,7 @@ int	main()
 		delete spa[i] ;
 	}
 
+	delete doggy_dog ;
 	delete doggy ;
 	return (0);
 }

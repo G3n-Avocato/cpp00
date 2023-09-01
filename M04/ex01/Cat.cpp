@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 19:31:58 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/31 00:14:24 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:39:36 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ Cat::Cat(Cat const &src) : Animal (src) {
 }
 
 Cat&	Cat::operator=(Cat const &rhs) {
+	std::string	*id;
+
 	if (this != &rhs) {
 		this->_type = rhs._type;
 		delete this->_brain ;
-		this->_brain = rhs.getBrain();
+		this->_brain = new Brain();
+		id = rhs.getIdeas();
+		this->_brain->setIdeas(id);
 	}
 	return (*this);
 }
@@ -35,6 +39,12 @@ Cat&	Cat::operator=(Cat const &rhs) {
 Cat::~Cat(void) {
 	delete	_brain;
 	std::cout << "Destructor Cat called" << std::endl;
+}
+
+Brain	*Cat::getBrain(void) const {
+	Brain	*get = new Brain();
+	get = this->_brain;
+	return (get);
 }
 
 void	Cat::makeSound(void) const {
@@ -45,47 +55,10 @@ std::string	Cat::getType() const {
 	return (this->_type);
 }
 
-Brain	*Cat::getBrain(void) const {
-	Brain	*get = new Brain();
-	get = this->_brain;
-	return (get);
-}
-
-void	Cat::setIdeas(std::string id) {
+void	Cat::setIdeas(std::string *id) {
 	this->_brain->setIdeas(id);
 }
 
 std::string	*Cat::getIdeas(void) const {
 	return (this->_brain->getIdeas());
 }
-
-
-
-
-WrongCat::WrongCat(void) : WrongAnimal() {
-	std::cout << "Default constructor WrongCat called" << std::endl;
-	this->_type = "Wrong Cat";
-}
-
-WrongCat::WrongCat(WrongCat const &src) : WrongAnimal(src) {
-	std::cout << "Copy Constructor WrongCat called" << std::endl;
-	*this = src;
-}
-
-WrongCat&	WrongCat::operator=(const WrongCat &rhs) {
-	if (this != &rhs)
-		this->_type = rhs._type;
-	return (*this);
-}
-
-WrongCat::~WrongCat(void) {
-	std::cout << "Destructor WrongCat called" << std::endl;
-}
-
-void	WrongCat::makeSound(void) const {
-	std::cout << "Meuuuuuuuh .... Mmmmmeeeeuuuuuuuuuhhh !!" << std::endl;
-}
-
-std::string	WrongCat::getType() const {
-	return (this->_type);
-} 

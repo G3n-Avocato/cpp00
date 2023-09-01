@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 00:32:35 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/31 00:36:18 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:02:12 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Brain {
 		Brain &operator=(const Brain &rhs) ;
 		~Brain(void);
 
-		void	setIdeas(std::string id) ;
+		void	setIdeas(std::string *id) ;
 		std::string *getIdeas(void) const ;
 
 	private:

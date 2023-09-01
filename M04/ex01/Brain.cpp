@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:59:32 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/30 22:46:55 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:02:00 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ Brain::~Brain(void) {
 	std::cout << "Destructor Brain called" << std::endl;
 }
 
-void	Brain::setIdeas(std::string id) {
+void	Brain::setIdeas(std::string *id) {
 	for (int i = 0; i < 100; i++)
-		this->_ideas[i] = id;
+		this->_ideas[i] = id[i];
 }
 
 std::string	*Brain::getIdeas(void) const {

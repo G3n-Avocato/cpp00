@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 19:37:32 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/24 12:39:43 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/01 17:05:45 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,6 @@ class	Cat : public Animal {
 		void		makeSound(void) const override;
 		std::string	getType(void) const;
 		
-};
-
-class	WrongCat : public WrongAnimal {
-
-	public:
-		WrongCat(void);
-		WrongCat(WrongCat const &src);
-		WrongCat&	operator=(WrongCat const &rhs);
-		~WrongCat(void) override;
-
-		void	makeSound(void) const;
-		std::string	getType(void) const;
 };
 
 #endif
