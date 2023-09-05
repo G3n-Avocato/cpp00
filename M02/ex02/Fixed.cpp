@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:43:10 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/18 00:59:56 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/05 22:49:04 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ const Fixed&	Fixed::max(const Fixed &rhs, const Fixed &other) {
 	return (rhs);
 }
 
-Fixed& Fixed::max(Fixed &rhs, Fixed &other) { //pA besoin & normalement //tester
+Fixed& Fixed::max(Fixed &rhs, Fixed &other) {
 	if (rhs <= other)
 		return (other);
 	return (rhs);
