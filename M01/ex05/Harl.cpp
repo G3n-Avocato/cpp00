@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:07:33 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/14 18:20:13 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:31:46 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ Harl::~Harl(void) {
 }
 
 void	Harl::debug(void) {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do !" << std::endl;
+	std::cout << "\"I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do !\"" << std::endl;
 }
 
 void	Harl::info(void) {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger ! If you did, I wouldn’t be asking for more !" << std::endl;
+	std::cout << "\"I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger ! If you did, I wouldn’t be asking for more !\"" << std::endl;
 }
 
 void	Harl::warning(void) {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
+	std::cout << "\"I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month.\"" << std::endl;
 }
 
 void	Harl::error(void) {
-	std::cout << "This is unacceptable ! I want to speak to the manager now." << std::endl;
+	std::cout << "\"This is unacceptable ! I want to speak to the manager now.\"" << std::endl;
 }
 
 void	Harl::complain(std::string level) {
@@ -49,5 +49,5 @@ void	Harl::complain(std::string level) {
 		}
 	}
 	if (i == 5)
-		std::cout << "it's not Harl's complaint ..." << std::endl;
+		std::cout << "\"It's not Harl's complaint...\"" << std::endl;
 }

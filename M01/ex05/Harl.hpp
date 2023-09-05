@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:07:56 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/14 17:52:47 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:25:26 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class	Harl {
 		void	info(void);
 		void	warning(void);
 		void	error(void);
-
 };
 
 #endif

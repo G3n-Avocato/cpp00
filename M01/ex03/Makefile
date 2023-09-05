@@ -12,7 +12,7 @@
 
 NAME			= Unnecessary_violence
 CXX				= clang++
-CXXFLAGS		= -Wall -Wextra -Werror -g3
+CXXFLAGS		= -Wall -Wextra -Werror -g3 -std=c++98
 RM				= rm -rf
 
 SRC				= main.cpp \

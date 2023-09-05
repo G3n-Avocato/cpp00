@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 23:41:48 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/31 20:19:06 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:19:44 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	Sed::replace2(void) {
 }
 
 bool	Sed::newFile(void) {
-	std::ofstream	out(this->_name);
+	std::ofstream	out(this->_name.c_str());
 	
 	if (!out)
 		return (false);
