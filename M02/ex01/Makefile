@@ -6,13 +6,13 @@
 #    By: lamasson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 15:28:14 by lamasson          #+#    #+#              #
-#    Updated: 2023/08/16 15:29:07 by lamasson         ###   ########.fr        #
+#    Updated: 2023/09/05 21:25:10 by lamasson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= a.out
 CXX				= clang++
-CXXFLAGS		= -Wall -Wextra -Werror -g3
+CXXFLAGS		= -Wall -Wextra -Werror -g3 -std=c++98
 RM				= rm -rf
 
 SRC				= main.cpp \
