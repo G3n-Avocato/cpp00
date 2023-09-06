@@ -12,7 +12,7 @@
 
 NAME			= a.out
 CXX				= clang++
-CXXFLAGS		= -Wall -Wextra -Werror -g3 -std=c++98
+CXXFLAGS		= -Wall -Wextra -Werror -g3
 RM				= rm -rf
 
 SRC				= main.cpp \
