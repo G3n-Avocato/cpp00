@@ -6,12 +6,11 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 19:31:58 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/01 17:41:20 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/10 16:29:01 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "Animal.hpp"
 
 Cat::Cat(void) : Animal() {
 	std::cout << "Default constructor Cat called" << std::endl;

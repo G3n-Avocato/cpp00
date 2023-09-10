@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 19:05:24 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/23 20:48:59 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/10 17:57:37 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class	Dog : public Animal {
 		Dog(void);
 		Dog(Dog const &src);
 		Dog&	operator=(Dog const &rhs);
-		~Dog(void) override;
+		virtual ~Dog(void);
 
-		void		makeSound(void) const override;
+		virtual void		makeSound(void) const;
 		std::string	getType(void) const;
 	
 };

@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 19:37:32 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/01 18:35:12 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/10 18:04:14 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ class	Cat : public Animal {
 		Cat(void);
 		Cat(Cat const &src);
 		Cat&	operator=(Cat const &rhs);
-		~Cat(void) override;
+		~Cat(void);
 
-		void		makeSound(void) const override;
-		std::string	getType(void) const;
-		Brain	*getBrain(void) const;
-		void	setIdeas(std::string *id);
-		std::string *getIdeas(void) const ;
+		virtual void		makeSound(void) const;
+		std::string			getType(void) const;
+		Brain				*getBrain(void) const;
+		void				setIdeas(std::string *id);
+		std::string			*getIdeas(void) const ;
 
 	private:
 		Brain*	_brain;

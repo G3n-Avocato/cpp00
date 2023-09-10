@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 17:01:49 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/01 17:47:36 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/10 17:55:55 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ class	WrongAnimal {
 	protected:
 		std::string	_type;
 };
-//virtual void makeSound() const;
+
 #endif

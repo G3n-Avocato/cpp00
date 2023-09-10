@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:59:32 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/01 18:02:00 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/10 20:08:27 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	Brain::setIdeas(std::string *id) {
 
 std::string	*Brain::getIdeas(void) const {
 	std::string *id = new std::string[100];
+
 	for (int i = 0; i < 100; i++)
 		id[i] = this->_ideas[i];
 	return (id);
