@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 21:29:40 by lamasson          #+#    #+#             */
+/*   Updated: 2023/09/11 21:52:30 by lamasson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
+
+#include <iostream>
+
+class	AMateria {
+	
+	protected:
+
+	public:
+		AMateria(std::string const & type);
+		AMateria(AMateria const &src);
+		AMateria&	operator=(AMateria const &rhs);
+		~AMateria(void);
+
+		std::string const & getType() const; //Returns the materia type
+		
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+};
+
+#endif

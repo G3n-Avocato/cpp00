@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:57:54 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/11 18:44:06 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/11 21:08:16 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 int	main()
 {
 	{
-	std::cout << "----- TEST 1 -----" << std::endl;
+	std::cout << std::endl;
+	std::cout << "----- TEST 1 & 6 -----" << std::endl;
 	std::cout << std::endl;
 	
-	const Animal*	meta = new Animal();
-	const Animal*	dog = new Dog();
-	const Animal*	cat = new Cat();
+	//const AAnimal*	meta = new AAnimal();
+	const AAnimal*	dog = new Dog();
+	const AAnimal*	cat = new Cat();
 	
 	std::cout << std::endl;
 	std::cout << dog->getType() << " " << std::endl;
@@ -33,13 +34,13 @@ int	main()
 	cat->makeSound();
 
 	std::cout << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	meta->makeSound();
+	//std::cout << meta->getType() << " " << std::endl;
+	//meta->makeSound();
 	std::cout << std::endl;
 	
 	delete cat;
 	delete dog;
-	delete meta;
+	//delete meta;
 	std::cout << std::endl;
 	}
 	{
@@ -113,7 +114,7 @@ int	main()
 	std::cout << "----- TEST 5 -----" << std::endl;
 	std::cout << std::endl;
 
-	const Animal*	spa[20];
+	const AAnimal*	spa[20];
 	
 	for (int i = 0; i < 20; i++) {
 		if (i < 10)
