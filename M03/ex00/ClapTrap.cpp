@@ -6,12 +6,11 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 17:04:49 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/20 18:31:56 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/09 16:43:50 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <iostream>
 
 ClapTrap::ClapTrap(std::string name) {
 	std::cout << "Default constructor called" << std::endl;
@@ -60,6 +59,8 @@ void	ClapTrap::attack(const std::string &target) {
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (this->_HitPoints > 0) {
 		this->_HitPoints = this->_HitPoints - amount;
+		if(this->_HitPoints < 0)
+			this->_HitPoints = 0;
 		std::cout << "ClapTrap " << this->_name << " take " << amount;
 		std::cout << " damage, life bar at " << this->_HitPoints << std::endl;
 	}
@@ -73,7 +74,8 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		this->_EnergyPoints--;
 		this->_HitPoints = this->_HitPoints + amount;
 		std::cout << "ClapTrap " << this->_name << " repairs itself, it gains " << amount;
-		std::cout << " life points, life bar at " << this->_HitPoints << std::endl;
+		std::cout << " life points, life bar at " << this->_HitPoints;
+		std::cout << ", Energy Points at " << this->_EnergyPoints << std::endl;
 	}
 	else {
 		std::cout << "ClapTrap " << this->_name; 

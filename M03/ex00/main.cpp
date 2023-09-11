@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 17:36:19 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/20 18:34:49 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/09 16:44:38 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,25 @@ int main(void) {
 	ClapTrap	trap("Jo");
 	ClapTrap	eymi(trap);
 
+	std::cout << std::endl;
 	clap.attack("Jo");
 	trap.takeDamage(2);
-	eymi.beRepaired(1);
-	trap.beRepaired(0);
-	clap.attack("eymi");
-	eymi.takeDamage(5);
-	trap.attack("eymi");
-	eymi.takeDamage(6);
+	
+	std::cout << std::endl;
 	eymi.beRepaired(0);
+	std::cout << std::endl;
+	trap.beRepaired(1);
+
+	std::cout << std::endl;
+	clap.attack("eymi");
+	eymi.takeDamage(4);
+
+	std::cout << std::endl;
+	trap.attack("eymi");
+	eymi.takeDamage(7);
+	eymi.beRepaired(0);
+	trap.attack("eymi");
 	eymi.takeDamage(0);
+	std::cout << std::endl;
 	return (0);
 }

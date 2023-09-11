@@ -6,13 +6,13 @@
 #    By: lamasson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/19 16:50:40 by lamasson          #+#    #+#              #
-#    Updated: 2023/08/20 21:55:33 by lamasson         ###   ########.fr        #
+#    Updated: 2023/09/09 16:46:31 by lamasson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= FragTrap
-CXX				= clang++
-CXXFLAGS		= -Wall -Wextra -Werror -g3
+CXX				= c++
+CXXFLAGS		= -Wall -Wextra -Werror -g3 -std=c++98
 RM				= rm -rf
 
 SRC				= main.cpp \

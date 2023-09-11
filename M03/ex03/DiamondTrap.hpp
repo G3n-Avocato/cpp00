@@ -6,14 +6,13 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 22:08:42 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/23 16:53:51 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:16:13 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONTRAP_HPP
 # define DIAMONTRAP_HPP
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
@@ -26,11 +25,11 @@ class	DiamondTrap : public ScavTrap, public FragTrap {
 		~DiamondTrap(void);
 		
 		void	whoAmI(void);
-		void	attack(const std::string &target) override;
+		void	attack(const std::string &target);
 
 	private:
 		std::string	_name;
-
+		std::string	_ClapName;
 };
 
 #endif

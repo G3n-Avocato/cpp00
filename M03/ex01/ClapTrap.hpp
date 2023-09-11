@@ -14,6 +14,7 @@
 # define CLAPTRAP_HPP
 
 #include <string>
+#include <iostream>
 
 class ClapTrap {
 
@@ -29,10 +30,10 @@ class ClapTrap {
 		void	beRepaired(unsigned int amount);
 
 	protected :
-		std::string				_name;
-		unsigned int			_HitPoints;
-		unsigned int			_EnergyPoints;
-		unsigned int			_AttackDamage;
+		std::string		_name;
+		int			_HitPoints;
+		int			_EnergyPoints;
+		int			_AttackDamage;
 	
 };
 

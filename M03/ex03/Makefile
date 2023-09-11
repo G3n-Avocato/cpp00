@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 NAME			= DiamondTrap
-CXX				= clang++
-CXXFLAGS		= -Wall -Wextra -Werror -g3
+CXX				= c++
+CXXFLAGS		= -Wall -Wextra -Werror -g3 -std=c++98
 RM				= rm -rf
 
 SRC				= main.cpp \

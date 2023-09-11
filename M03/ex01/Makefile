@@ -6,13 +6,13 @@
 #    By: lamasson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/19 16:50:40 by lamasson          #+#    #+#              #
-#    Updated: 2023/08/20 20:26:32 by lamasson         ###   ########.fr        #
+#    Updated: 2023/09/09 16:00:36 by lamasson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= ScavTrap
-CXX				= clang++
-CXXFLAGS		= -Wall -Wextra -Werror -g3
+CXX				= c++
+CXXFLAGS		= -Wall -Wextra -Werror -g3 -std=c++98
 RM				= rm -rf
 
 SRC				= main.cpp \

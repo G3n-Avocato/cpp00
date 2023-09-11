@@ -6,12 +6,11 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:49:32 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/20 21:53:14 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/09 17:12:59 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <iostream>
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "Default constructor ScavTrap called" << std::endl;

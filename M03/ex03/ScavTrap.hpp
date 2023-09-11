@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:44:06 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/20 20:09:54 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/09 17:12:16 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ class	ScavTrap : virtual public ClapTrap {
 
 		virtual void	attack(const std::string& target);
 		void	guardGate(void);
-
-	private :
-		std::string	_name;
 };
 
 #endif

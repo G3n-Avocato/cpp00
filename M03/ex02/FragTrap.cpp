@@ -6,13 +6,11 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 21:26:13 by lamasson          #+#    #+#             */
-/*   Updated: 2023/08/20 22:00:57 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/09 16:51:58 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include "ClapTrap.hpp"
-#include <iostream>
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "Default constructor FlagTrap called" << std::endl;
