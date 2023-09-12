@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:00:22 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/11 22:29:32 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/12 22:01:48 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Ice::~Ice(void) {
 }
 
 Ice*	Ice::clone(void) const {
-
+	Ice		*tmp = new Ice();
+	return (tmp);
 }
 
 void	Ice::use(ICharacter& target) {

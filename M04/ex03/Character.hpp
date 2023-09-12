@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:35:20 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/11 23:21:14 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/12 22:57:47 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ class	Character {
 		void use(int idx, ICharacter& target);
 
 	private:
-		std::string	_name;
+		const std::string*	_name;
 		AMateria*	_items[4];
+		AMateria**	_stock;
 
 };
 
