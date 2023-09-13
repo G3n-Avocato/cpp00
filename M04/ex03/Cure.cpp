@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:56:30 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/12 22:00:42 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:10:04 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 std::string	Cure::_type = "cure";
 
-Cure::Cure() {
-
+Cure::Cure() : AMateria(this->_type){
 }
 
-Cure::Cure(Cure const &src) {
-
+Cure::Cure(Cure const &src) : AMateria(src) {
+	*this = src;
 }
 
 Cure&	Cure::operator=(const Cure &rhs) {
-
+	return (*this);
 }
 
-Cure::~Cure() {
-
+Cure::~Cure(void) {
 }
 
 Cure*	Cure::clone(void) const {
@@ -36,5 +34,5 @@ Cure*	Cure::clone(void) const {
 }
 
 void	Cure::use(ICharacter& target) {
-	std::cout << "* heals " << target << "’s wounds *" << std::endl;
+	std::cout << "* heals " << &target << "’s wounds *" << std::endl;
 }

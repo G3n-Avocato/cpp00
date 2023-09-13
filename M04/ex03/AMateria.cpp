@@ -6,24 +6,39 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:50:07 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/11 21:54:18 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:25:22 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 AMateria::AMateria(std::string const & type) {
-
+	this->_type = type;
 }
 
 AMateria::AMateria(AMateria const &src) {
-
+	*this = src;
 }
 
 AMateria	&AMateria::operator=(const AMateria &rhs) {
+	if (this != &rhs)
+		this->_type = rhs._type;
 
 }
+
 AMateria::~AMateria(void) {
 
 }
 
+void	AMateria::use(ICharacter &target) {
+	
+}
+
+AMateria*	AMateria::clone(void) const {
+	AMateria*	tmp;
+
+}
+
+std::string const& AMateria::getType(void) const {
+	return (this->_type);
+}

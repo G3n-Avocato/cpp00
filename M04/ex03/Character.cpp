@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 22:22:49 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/12 23:44:04 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:51:00 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ Character&	Character::operator=(const Character &rhs) {
 
 Character::~Character(void) {
 	
-	//for (int i = 0; this->_stock[i]; i++)
-	//	delete this->_stock[i] ;
+	for (int i = 0; this->_stock[i]; i++)
+		delete this->_stock[i] ;
 	//delete [] this->_stock ;
 }
 

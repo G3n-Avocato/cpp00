@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:35:20 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/12 22:57:47 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/13 16:41:57 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 # define CHARACTER_HPP
 
 #include "ICharacter.hpp"
-#include "AMateria.hpp"
 
-class	Character {
+class	Character: public ICharacter {
 	
 	public:
 		Character(const std::string *name);
