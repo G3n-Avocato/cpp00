@@ -6,14 +6,23 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 17:04:49 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/09 16:43:50 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/14 20:48:02 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void) {
+	std::cout << "Default constructor ClapTrap called" << std::endl;
+	this->_name = "default";
+	this->_HitPoints = 0;
+	this->_EnergyPoints = 0;
+	this->_AttackDamage = 0;
+}
+
+
 ClapTrap::ClapTrap(std::string name) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Init constructor ClapTrap called" << std::endl;
 	this->_name = name;
 	this->_HitPoints = 10;
 	this->_EnergyPoints = 10;
@@ -21,7 +30,7 @@ ClapTrap::ClapTrap(std::string name) {
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor ClapTrap called" << std::endl;
 	*this = src;
 }
 
@@ -36,7 +45,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &rhs) {
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor ClapTrap called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target) {
@@ -52,7 +61,7 @@ void	ClapTrap::attack(const std::string &target) {
 			std::cout << " has no more energy points ! ";
 		else
 			std::cout << " has no more life points ! ";
-		std::cout << " can't attacks" << target << std::endl;
+		std::cout << "can't attacks " << target << std::endl;
 	}
 }
 

@@ -6,14 +6,22 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 21:26:13 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/09 16:51:58 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/14 21:28:51 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void) {
+	std::cout << "Default constructor FragTrap called" << std::endl;
+	this->_name = "default";
+	this->_HitPoints = 0;
+	this->_EnergyPoints = 0;
+	this->_AttackDamage = 0;
+}
+
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
-	std::cout << "Default constructor FlagTrap called" << std::endl;
+	std::cout << "Init constructor FragTrap called" << std::endl;
 	this->_name = name;
 	this->_HitPoints = 100;
 	this->_EnergyPoints = 100;
@@ -21,7 +29,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 }
 
 FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src) {
-	std::cout << "Copy constructor FlagTrap called" << std::endl;
+	std::cout << "Copy constructor FragTrap called" << std::endl;
 	*this = src;
 }
 
@@ -36,9 +44,9 @@ FragTrap	&FragTrap::operator=(const FragTrap &rhs) {
 }
 
 FragTrap::~FragTrap(void) {
-	std::cout << "Destructor FlagTrap called" << std::endl;
+	std::cout << "Destructor FragTrap called" << std::endl;
 }
 
 void	FragTrap::hightFivesGuys(void) {
-	std::cout << "FlagTrap " << this->_name << " : want a hight five !" << std::endl;
+	std::cout << "FragTrap " << this->_name << " : want a hight five !" << std::endl;
 }

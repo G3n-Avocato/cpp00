@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:57:54 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/11 21:08:16 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/14 22:44:56 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	main()
 	std::cout << "----- TEST 1 & 6 -----" << std::endl;
 	std::cout << std::endl;
 	
-	//const AAnimal*	meta = new AAnimal();
 	const AAnimal*	dog = new Dog();
+	std::cout << std::endl;
 	const AAnimal*	cat = new Cat();
 	
 	std::cout << std::endl;
@@ -34,13 +34,11 @@ int	main()
 	cat->makeSound();
 
 	std::cout << std::endl;
-	//std::cout << meta->getType() << " " << std::endl;
-	//meta->makeSound();
 	std::cout << std::endl;
 	
 	delete cat;
+	std::cout << std::endl;
 	delete dog;
-	//delete meta;
 	std::cout << std::endl;
 	}
 	{
@@ -48,6 +46,7 @@ int	main()
 	std::cout << std::endl;
 	
 	Dog			doggy;
+	std::cout << std::endl;
 	Dog			another_doggy(doggy);
 
 	std::cout << std::endl;
@@ -55,7 +54,6 @@ int	main()
 	std::cout << another_doggy.getType() << " : ";
 	another_doggy.makeSound();
 	std::cout << std::endl;
-
 	}
 	{
 	std::cout << std::endl;
@@ -63,6 +61,7 @@ int	main()
 	std::cout << std::endl;
 	
 	const WrongAnimal*	W_meta = new WrongAnimal();
+	std::cout << std::endl;
 	const WrongAnimal*	W_cat = new WrongCat();
 
 	std::cout << std::endl;
@@ -74,6 +73,7 @@ int	main()
 	std::cout << std::endl;
 
 	delete W_cat;
+	std::cout << std::endl;
 	delete W_meta;
 	}	
 	{
@@ -81,6 +81,7 @@ int	main()
 	std::cout << "----- TEST 4 -----" << std::endl;
 	std::cout << std::endl;
 	Dog*	doggy = new Dog();
+	std::cout << std::endl;
 	Dog*	doggy_dog;
 	
 	std::string		sau[100];
@@ -105,8 +106,10 @@ int	main()
 	std::cout << std::endl;
 	
 	delete [] id ;
+	std::cout << std::endl;
 		
 	delete doggy_dog ;
+	std::cout << std::endl;
 	delete doggy ;
 	}
 	{

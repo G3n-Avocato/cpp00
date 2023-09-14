@@ -12,7 +12,7 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal() {
+Dog::Dog(void) {
 	std::cout << "Default constructor Dog called" << std::endl;
 	this->_type = "Dog";
 	this->_brain = new Brain();

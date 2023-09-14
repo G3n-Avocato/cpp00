@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:44:06 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/09 16:49:16 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/14 21:24:50 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class	ScavTrap : public ClapTrap {
 
 	public :
+		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const &src);
 		ScavTrap&	operator=(ScavTrap const &rhs);
