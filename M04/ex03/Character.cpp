@@ -6,11 +6,15 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 22:22:49 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/13 18:51:00 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 00:18:32 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+
+Character::Character(void) {
+	this->_name = (std::string *)"default";
+}
 
 Character::Character(const std::string *name) {
 	this->_name = name;

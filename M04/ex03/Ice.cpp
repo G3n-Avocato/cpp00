@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:00:22 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/13 19:11:04 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 00:06:19 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 std::string	Ice::_type = "ice";
 
-Ice::Ice() : AMateria(this->_type) {
+Ice::Ice(void) : AMateria(this->_type) {
 }
 
 Ice::Ice(Ice const &src) : AMateria(src) {
@@ -26,7 +26,6 @@ Ice&	Ice::operator=(const Ice &rhs) {
 }
 
 Ice::~Ice(void) {
-
 }
 
 Ice*	Ice::clone(void) const {

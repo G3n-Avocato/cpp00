@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:01:52 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/13 18:56:03 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 00:16:17 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@
 class Cure: public AMateria {
 	
 	public:
-		Cure();
+		Cure(void);
 		Cure(Cure const &src);
 		Cure&	operator=(Cure const &rhs);
-		~Cure();
+		~Cure(void);
 
-		std::string	static & getType();
 		Cure*	clone(void) const;
 		void	use(ICharacter& target);
 	

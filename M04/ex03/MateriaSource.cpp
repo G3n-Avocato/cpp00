@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:25:30 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/13 20:05:42 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/14 23:59:27 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ MateriaSource::MateriaSource(MateriaSource const &src) {
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource &rhs) {
+	if (this != &rhs) {
+	
 
+	}
 }
 
 MateriaSource::~MateriaSource(void) {
