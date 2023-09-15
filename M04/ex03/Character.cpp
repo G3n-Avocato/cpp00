@@ -6,41 +6,41 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 22:22:49 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 00:18:32 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:52:14 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(void) {
-	this->_name = (std::string *)"default";
+	this->_name = "default";
 }
 
-Character::Character(const std::string *name) {
+Character::Character(std::string name) {
 	this->_name = name;
 }
 
 Character::Character(Character const &src) {
-
+	*this = src;
 }
 
 Character&	Character::operator=(const Character &rhs) {
 
 	if (this != &rhs) {
 		this->_name = rhs._name;
-		delete [] this->_items;	
 	}
+	return (*this);
 }
 
 Character::~Character(void) {
 	
-	for (int i = 0; this->_stock[i]; i++)
-		delete this->_stock[i] ;
+//	for (int i = 0; this->_stock[i]; i++)
+//		delete this->_stock[i] ;
 	//delete [] this->_stock ;
 }
 
 std::string const& Character::getName(void) const {
-	return (*this->_name);
+	return (this->_name);
 }
 
 void	Character::equip(AMateria *m) {

@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:56:30 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 00:16:34 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 16:16:48 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ Cure::Cure(Cure const &src) : AMateria(src) {
 }
 
 Cure&	Cure::operator=(const Cure &rhs) {
+	if (this != &rhs) {
+		;
+	}
 	return (*this);
 }
 

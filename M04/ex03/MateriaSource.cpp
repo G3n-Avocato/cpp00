@@ -6,29 +6,29 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:25:30 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/14 23:59:27 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:54:53 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource(void) {
-
 }
 
 MateriaSource::MateriaSource(MateriaSource const &src) {
-
+	*this = src;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource &rhs) {
 	if (this != &rhs) {
-	
-
+		for (int i = 0; i < 4; i++) {
+			this->_learnM[i] = rhs._learnM[i];
+		}
 	}
+	return (*this);
 }
 
 MateriaSource::~MateriaSource(void) {
-	delete [] this->_learnM ;
 }
 
 

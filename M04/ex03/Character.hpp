@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:35:20 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 00:17:39 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:51:45 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	Character: public ICharacter {
 	
 	public:
 		Character(void);
-		Character(const std::string *name);
+		Character(std::string name);
 		Character(Character const &src);
 		Character&	operator=(const Character &rhs);
 		~Character(void);
@@ -30,7 +30,7 @@ class	Character: public ICharacter {
 		void use(int idx, ICharacter& target);
 
 	private:
-		const std::string*	_name;
+		std::string	_name;
 		AMateria*	_items[4];
 		AMateria**	_stock;
 

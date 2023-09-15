@@ -6,9 +6,16 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:23:18 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/11 21:24:24 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:55:19 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main(void)
 {

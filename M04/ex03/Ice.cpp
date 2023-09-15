@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:00:22 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 00:06:19 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 16:16:26 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ Ice::Ice(Ice const &src) : AMateria(src) {
 }
 
 Ice&	Ice::operator=(const Ice &rhs) {
+	if (this != &rhs) {
+		;	
+	}
 	return (*this);
 }
 
