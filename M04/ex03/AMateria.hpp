@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:29:40 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 16:12:10 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:37:50 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ICharacter; //declaraction pour empecher conflit appel des deux class
 class	AMateria {
 	
 	protected:
-		std::string  _type;
+		std::string _type;
 	
 	public:
 		AMateria(void);

@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:25:30 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 15:54:53 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:59:27 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	MateriaSource::learnMateria(AMateria *m) {
 AMateria* MateriaSource::createMateria(const std::string &type) {
 	if (type == "cure" || type == "ice") {
 		int	i = 0;
-		while ( i >= 0 && type == this->_learnM[i]->getType())
+		while ( i >= 0 && type != this->_learnM[i]->getType())
 			i--;
 		AMateria*	tmp(this->_learnM[i]);
 		return (tmp);
