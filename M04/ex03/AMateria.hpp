@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:29:40 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 23:37:50 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/16 23:16:53 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class	AMateria {
 		AMateria(std::string const & type);
 		AMateria(AMateria const &src);
 		AMateria&	operator=(AMateria const &rhs);
-		~AMateria(void);
+		virtual ~AMateria(void);
 
 		std::string const & getType() const; //Returns the materia type
 		

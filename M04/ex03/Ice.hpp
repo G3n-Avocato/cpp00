@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:55:27 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 00:23:02 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/16 18:43:23 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ICE_HPP
 
 #include "AMateria.hpp"
+#include "Character.hpp"
 
 class Ice: public AMateria {
 	

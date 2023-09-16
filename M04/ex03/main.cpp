@@ -6,11 +6,12 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:23:18 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 15:55:19 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/16 23:27:57 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
 #include "Character.hpp"
@@ -19,6 +20,9 @@
 
 int main(void)
 {
+	{
+	std::cout << "----- TEST 1 -----" << std::endl;
+	std::cout << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	
 	src->learnMateria(new Ice());
@@ -40,6 +44,31 @@ int main(void)
 	delete bob;
 	delete me;
 	delete src;
-	
+	}
+	{
+	std::cout << "----- TEST 2 -----" << std::endl;
+	std::cout << std::endl;
+	IMateriaSource *src = new MateriaSource();
+
+	src->learnMateria(new Ice());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
+	ICharacter*	tod = new Character("tod");
+	AMateria* tmp;
+
+	tmp = src->createMateria("cure");
+	tod->equip(tmp);
+	tmp = src->createMateria("ice");
+	tod->equip(tmp);
+
+
+
+
+
+
+
+	}
 	return 0;
 }

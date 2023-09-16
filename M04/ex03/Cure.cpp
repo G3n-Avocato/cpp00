@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:56:30 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 23:26:19 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/16 18:44:18 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ Cure*	Cure::clone(void) const {
 }
 
 void	Cure::use(ICharacter& target) {
-	std::cout << "* heals " << &target << "’s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

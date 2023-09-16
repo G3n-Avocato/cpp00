@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:35:20 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 15:51:45 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/16 21:52:13 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ class	Character: public ICharacter {
 		std::string	_name;
 		AMateria*	_items[4];
 		AMateria**	_stock;
+		unsigned int	_ssize;
+
+		void	saveItems(void);
+		void	emptyItems(void);
 
 };
 

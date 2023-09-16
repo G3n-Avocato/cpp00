@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:12:54 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/13 17:28:35 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/16 21:45:56 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class MateriaSource: public IMateriaSource {
 
 	public:
-		MateriaSource();
+		MateriaSource(void);
 		MateriaSource(MateriaSource const &src);
 		MateriaSource& operator=(MateriaSource const &rhs);
-		~MateriaSource();
+		~MateriaSource(void);
 
 		void	learnMateria(AMateria* m);
 		AMateria* createMateria(std::string const &type);

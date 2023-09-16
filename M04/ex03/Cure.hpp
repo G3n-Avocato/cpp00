@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:01:52 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/15 00:16:17 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/16 18:43:59 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CURE_HPP
 
 #include "AMateria.hpp"
+#include "Character.hpp"
 
 class Cure: public AMateria {
 	
