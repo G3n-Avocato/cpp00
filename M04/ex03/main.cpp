@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:23:18 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/16 23:27:57 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/17 16:10:30 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int main(void)
 	delete src;
 	}
 	{
+	std::cout << std::endl;
 	std::cout << "----- TEST 2 -----" << std::endl;
 	std::cout << std::endl;
 	IMateriaSource *src = new MateriaSource();
@@ -62,10 +63,10 @@ int main(void)
 	tod->equip(tmp);
 	tmp = src->createMateria("ice");
 	tod->equip(tmp);
+	tod->unequip(1);
 
-
-
-
+	ICharacter *Rob	= new Character ("Rob");
+	tod->use(1, *Rob);
 
 
 
