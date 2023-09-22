@@ -6,7 +6,7 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:25:30 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/17 16:10:12 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:08:49 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,32 @@ MateriaSource::MateriaSource(void) {
 }
 
 MateriaSource::MateriaSource(MateriaSource const &src) {
+	for (int i = 0; i < 4; i++)
+		this->_learnM[i] = NULL;
 	*this = src;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource &rhs) {
 	if (this != &rhs) {
-		for (int i = 0; this->_learnM[i]; i++)
-			delete this->_learnM[i];
-		for (int i = 0; i < 4; i++)
-			this->_learnM[i] = rhs._learnM[i];
+		for (int i = 0; i < 4; i++) {
+			if (this->_learnM[i])
+				delete this->_learnM[i];
+		}
+		for (int i = 0; i < 4; i++) {
+			if (rhs._learnM[i])
+				this->_learnM[i] = rhs._learnM[i]->clone();
+			else
+				this->_learnM[i] = NULL;
+		}
 	}
 	return (*this);
 }
 
 MateriaSource::~MateriaSource(void) {
-	for (int i = 0; this->_learnM[i]; i++)
-		delete this->_learnM[i];
+	for (int i = 0; i < 4; i++) {
+		if (this->_learnM[i])
+			delete this->_learnM[i];
+	}
 }
 
 void	MateriaSource::learnMateria(AMateria *m) {
@@ -53,8 +63,7 @@ AMateria* MateriaSource::createMateria(const std::string &type) {
 		i-= 1;
 		while (i >= 0 && type != this->_learnM[i]->getType())
 			i--;
-		AMateria*	tmp(this->_learnM[i]);
-		return (tmp);
+		return (this->_learnM[i]->clone());
 	}
 	return (0);
 }

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 21:55:27 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/16 18:43:23 by lamasson         ###   ########.fr       */
+/*   Created: 2023/09/22 22:29:53 by lamasson          #+#    #+#             */
+/*   Updated: 2023/09/22 22:35:26 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-#include "Character.hpp"
+#include <iomanip>
 
-class Ice: public AMateria {
-	
+class	Bureaucrat {
+
 	public:
-		Ice(void);
-		Ice(Ice const &src);
-		Ice&	operator=(Ice const &rhs);
-		~Ice(void);
-	
-		Ice*	clone(void) const;
-		void	use(ICharacter& target);
-	
+		std::string	const getName(void) const ;
+		int	getGrade(void) const ;
+
+		void	upGrade() ;
+		void	downGrade();
+
 	private:
-		static std::string	_type;
+		std::string const	_name;
+		int					_grade;
 };
 
 #endif

@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 21:55:27 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/16 18:43:23 by lamasson         ###   ########.fr       */
+/*   Created: 2023/09/22 22:29:09 by lamasson          #+#    #+#             */
+/*   Updated: 2023/09/22 22:29:39 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#include "Bureaucrat.hpp"
 
-#include "Character.hpp"
+int main(void) {
 
-class Ice: public AMateria {
-	
-	public:
-		Ice(void);
-		Ice(Ice const &src);
-		Ice&	operator=(Ice const &rhs);
-		~Ice(void);
-	
-		Ice*	clone(void) const;
-		void	use(ICharacter& target);
-	
-	private:
-		static std::string	_type;
-};
 
-#endif
+
+	return (0);
+}
