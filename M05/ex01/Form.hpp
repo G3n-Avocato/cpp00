@@ -1,6 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/26 21:02:49 by lamasson          #+#    #+#             */
+/*   Updated: 2023/09/26 23:24:24 by lamasson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
+
+#include "Bureaucrat.hpp"
+#include <exception>
 
 class Form {
     
@@ -16,19 +30,26 @@ class Form {
 
         std::string const getName(void) const;
         bool    getBool(void) const;
-        int const   getGradeSign(void) const;
-        int const   getGradeExec(void) const;
+        int		getGradeSign(void) const;
+        int		getGradeExec(void) const;
 
     private:
 
         std::string const _name;
         bool    _signed;
-        int const   _gradeSign;
-        int const   _gradeExec;
+        const int   _gradeSign;
+        const int   _gradeExec;
 
-        void    GradeTooHighExcetion(void);
-        void    GradeTooLowException(void);
-        void    exception(void);
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
+        void    exceptionSign(void) const;
+		void	exceptionExec(void) const;
 };
 
 std::ostream&   operator<<(std::ostream &o, Form const &rhs);

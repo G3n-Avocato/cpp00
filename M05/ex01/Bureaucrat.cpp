@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/26 21:02:05 by lamasson          #+#    #+#             */
+/*   Updated: 2023/09/26 23:30:58 by lamasson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("default"), _grade(0) {
     this->exception();
@@ -39,6 +51,13 @@ void    Bureaucrat::upGrade(void) {
 void    Bureaucrat::downGrade(void) {
     this->_grade++;
     this->exception();
+}
+
+void	Bureaucrat::signForm(const Form &src) const {
+	if (src.getBool())
+		std::cout << this->_name << " signed " << src.getName();
+	else
+		std::cout << this->_name << " couldn't sign " << src.getName() << " because " << this->_grade;
 }
 
 void    Bureaucrat::exception(void) {

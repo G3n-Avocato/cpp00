@@ -6,11 +6,12 @@
 /*   By: lamasson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 22:29:09 by lamasson          #+#    #+#             */
-/*   Updated: 2023/09/22 22:29:39 by lamasson         ###   ########.fr       */
+/*   Updated: 2023/09/26 23:08:35 by lamasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void) {
     {
@@ -56,7 +57,36 @@ int main(void) {
         std::cout << Alice << std::endl;
         std::cout << Jeanne << std::endl;
         std::cout << Vee << std::endl;
-
     }
+	{
+		std::cout << std::endl;
+        std::cout << "----- TEST 3 -----" << std::endl;
+        std::cout << std::endl;
+    	
+		Bureaucrat	Joseph("Joseph", 6);
+		Form	Aff("A56", 5, 5);
+		Form	Bff("B56", 0, 155);
+
+        std::cout << std::endl;
+		Aff.beSigned(Joseph);
+        std::cout << std::endl;
+		Bff.beSigned(Joseph);
+
+        std::cout << std::endl;
+        std::cout << Aff;
+	}
+	{
+		std::cout << std::endl;
+        std::cout << "----- TEST 4 -----" << std::endl;
+        std::cout << std::endl;
+    	
+		Bureaucrat	Boss("Boss", 1);
+		Form	Aff("C56", 1, 10);
+		Form	Bff(Aff);
+
+		std::cout << Bff;
+
+
+	}
 	return (0);
 }
