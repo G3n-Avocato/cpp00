@@ -41,24 +41,22 @@ int main(void) {
     
         Bureaucrat  Alice;
         Bureaucrat  Jeanne("Jeanne", 17);
-        Bureaucrat  Vee(Jeanne);
+        Bureaucrat  Vee("Vee", 149);
         Bureaucrat  Johny("Johny", 176);
 
-        std::cout << std::endl;
         std::cout << Alice << std::endl;
         std::cout << Jeanne << std::endl;
         std::cout << Vee << std::endl;
         std::cout << Johny << std::endl;
 
         Alice.downGrade();
+        Vee = Jeanne;
         Jeanne.upGrade();
-	Johny = Jeanne;
         
-        std::cout << std::endl;
         std::cout << Alice << std::endl;
         std::cout << Jeanne << std::endl;
         std::cout << Vee << std::endl;
-        std::cout << Johny << std::endl;
+
     }
 	return (0);
 }
